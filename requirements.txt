@@ -1,0 +1,9 @@
+Django==1.5
+xlrd
+xlwt
+oauth2
+simplejson
+MySQL-python==1.2.4
+South
+selenium
+boto

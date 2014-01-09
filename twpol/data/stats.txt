@@ -1,0 +1,14 @@
+TOTAL_HOUSE_CANDIDATE_FOLLOWERS = 5348561    # about 5 million
+
+
+672  # 15 min windows in a week
+
+means we need 8000 requests per window, to process all data in a week
+
+
+
+
+--------
+
+NH_HOUSE_CANDIDATE_FOLLOWERS = 314252  # about 300 thousand
+NH_UNIQUE_VOTERS = 223331              # about 200 thousand

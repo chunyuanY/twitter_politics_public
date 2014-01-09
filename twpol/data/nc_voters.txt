@@ -1,0 +1,7 @@
+
+
+total voters:               49,010
+downloaded followers for:   41,280
+over max followers:         1,686
+401 error:                  5,054
+other:                      990

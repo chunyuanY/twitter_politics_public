@@ -1,0 +1,14 @@
+sudo apt-get install python-setuptools python-dev build-essential 
+sudo easy_install pip  
+sudo pip install --upgrade virtualenv 
+# now we have virtualenv!
+virtualenv tpolitics
+# pip install
+Django
+xlrd
+xlwt
+oauth2
+simplejson
+MySQL-python
+South
+selenium

@@ -1,0 +1,11 @@
+account id:
+
+**nine digit id:
+**type (1=house candidate, 2=senate candidate, 3=senator not up for re-election, 4=house lameduck, 5=senate lameduck, 6=presidential candidate, 7=media market)
+**ICPSR state code (99 for President and media markets),
+**two-digit district (0 for at-large, 99 for Senate, President, and media market)
+**party (1=democrat, 2=republican, 3=other, 9 for media markets),
+**two-digit candidate [alphabetic by first name for types 1, 2, and 6, 1 for types 3,4, and 5, sequential for media outlets]
+**one-digit account number (1, 2, 3, etc)
+
+

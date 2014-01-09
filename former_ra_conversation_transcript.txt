@@ -1,0 +1,335 @@
+under
+
+/home/namsoman/Somang
+
+ignore all the log files
+
+me: k
+
+sixjuwel: basically
+
+tw_mentions.py collects the metions and its stats daily
+5:17 PM
+tw_politic.py collects daily number of followers /followings/lists/tweets
+
+and userinfoScript.py collects the actual ids of followers.
+
+did you try mysql?
+
+me: yeah you can see the db schema with mysql
+5:18 PM
+im guessing tw_politic
+
+is the db where stuff is stored
+
+sixjuwel: yeap
+
+i figured
+
+once you in the database
+
+and do show tables;
+
+oh god
+5:19 PM
+i'll just tell you what i know,
+
+me: haha
+
+sixjuwel: but there are modifications since I left
+
+candidates table is the list of candidates, their name, twitter accountname
+5:20 PM
+candidatestats is the table where the tw_politic.py saves onto.
+
+the
+
+followers
+
+should be the actual ids of followers
+
+and the followings are the ids of any candidate is following.
+5:21 PM
+since I believe
+
+professors asked to get the november 5th ids
+
+use followers_nov5
+
+me: k so look at followers_nov5
+
+sixjuwel: I only know until this part,
+
+me: and to get followers, for each candidate in candidates
+
+select all followers_nov5 rows with that candidate id
+
+does that sound right to you?
+
+sixjuwel: yeap
+5:22 PM
+but makesure to check the id_str
+
+me: yeah im a bit confused by the field names
+
+like which are the twitter_ids, vs just some arbitrary id
+
+sixjuwel: ok
+
+so
+
+twitter has two "ids" for each user
+
+when you do
+5:23 PM
+select * from candidates limit 1
+
+id_str is the actual "unique" id for a user
+
+and screen_name is the http://twitter.com/screen_name
+
+user can always change their screen name so we stored the id_str as well
+
+also
+5:24 PM
+I am assuming professor told you about the unique "ID"
+
+did you get the excel file?
+
+me: nope...its been kind of bizzare, i havent really been told or received anything
+
+sixjuwel: yea
+
+i was like that too
+
+the day I first got into this project
+
+somebody else was already building this
+
+and I was like, wtf
+
+ok
+
+so
+5:25 PM
+if you see my folder
+
+me: haha yeah
+
+sixjuwel: /home/namsoman/Somang
+
+there is
+
+account_full_oct25.xls
+
+download that
+
+and open if,
+
+you'll find 8 digits at the last column
+
+that 8 digit number is what professors made for each candidates,
+5:27 PM
+so that it can be decyphered as something meaningful
+
+me: k scped the .xls, looking at it now
+
+sixjuwel: k
+5:28 PM
+me: I think they described this number to me, i forget, but something about district
+
+i could look it up in an email.. it was weird they told me about it as though it were for a hypothetical exercise
+
+without actually telling me where i would find the real data where these numbers were stored
+
+sixjuwel: oh
+5:29 PM
+i just sent the email
+
+me: maybe im wrong, just guessing here
+
+sixjuwel: haha
+
+they are like that,
+
+i've been worked for 8 months
+
+and yea
+
+its kind of hard thing to appetite them all
+
+anyways
+
+me: k awesome
+
+sixjuwel: so
+
+me: this is actually different than what i saw for exercise. but yeah makes sense
+5:30 PM
+sixjuwel: oh
+
+well
+
+maybe they changed it
+
+remember i left few months ago
+
+me: right i got u
+
+btw really appreciate your help
+
+sixjuwel: npnp
+
+me: but anyway, did you parse these numbers into mysql
+
+sixjuwel: what you should do is
+
+get onto followers
+5:31 PM
+do
+
+describe followers_nov5;
+
+me: yup looking at table
+
+so candidateid refers to those numbers?
+
+sixjuwel: the candidateid is the excel file id
+
+yeap
+
+userid is the screen name
+
+id_str is the twitter id
+5:32 PM
+followersid is the actual "follower"
+
+me: wait sorry.. I though id_str would be twitter_id of the follower
+
+how is followersid different
+
+?
+
+sixjuwel: oh
+
+the
+5:33 PM
+id_str is the id of the candidate
+
+me: kk
+
+is followersid the twitter id of the follower?
+5:34 PM
+sixjuwel: yes
+
+it might be helpful if you research on Twitter API a bit
+
+it follows their json return,
+
+me: kkk sweet. So that seems like pretty much everything i need. I've worked with the twitter api some before
+
+sixjuwel: great
+
+Ashwin the other guy,
+5:35 PM
+me: the only thing, is because I'm talking to you and not ashwin.. im a little concerned its changed
+
+sixjuwel: yea
+
+check with Ashwin
+
+i mean
+
+you can still write a script for doing this
+
+me: yeah will do, but atleast now I can ask him really easily
+
+thats also true
+
+sixjuwel: yeap
+
+me: except they specifically want the data form nov5
+
+sixjuwel: yeap
+
+me: does twitter let you retroactive?
+
+ive never done that
+5:36 PM
+sixjuwel: I don't believe so,
+
+but you can just
+
+check our database
+
+just select * from date = "2012-11-05" limit 100
+
+or something liek that
+
+we've been storing data from lastyear
+
+like august i believe
+
+I'm assuming they are talking about that part.
+5:37 PM
+me: yeah. ok last question, just thought of something
+
+sixjuwel: are you going to write the python ?
+
+me: so you think date filed in followers_nov5
+
+is the date this object was saved
+
+sixjuwel: oh
+
+me: like when you found this follow relationship
+
+sixjuwel: well
+
+if it hasn't changed,
+5:38 PM
+I wrote the script to store the ids daily
+
+on specific date.
+
+so I guess the table followers_nov5
+
+has the ids of followers on Nov 5
+
+me: should hopefully all have date nov5 in that field
+
+sixjuwel: double check with Ashwin though
+
+yeap
+
+me: will do
+
+k thank you very much again!
+5:39 PM
+you make it sound like it was kindof shitty being an ra for this project.. hope it works out better for me haha
+5:40 PM
+sixjuwel: lol
+
+yeap
+
+anyways
+
+time for me to go another meeting again
+
+:/
+
+gl with everything
+
+and
+
+let me know if you have another question
+
+send me a email
+
+or
+
+leave gmsg
+5:41 PM
+me: gl to you as well. If I'm ever in toronto will repay the favor. peace
+5:42 PM
+haha that sounded weird, i meant like buy you a drink
