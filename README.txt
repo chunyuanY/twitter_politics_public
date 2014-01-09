@@ -136,6 +136,7 @@ LONGSCRIPT
 I was hoping to polish and open source this tool. I never quite got around to it, and the version of longscript in this
 project is slightly divergent from the one on github I was going to opensource (but only barely). On github is the
 best documentation on longscript available.. I think it's really cool.
+https://github.com/maximusfowler/python-longscripts
 
 
 
@@ -148,7 +149,7 @@ create_twitter_account.py could probably get the job done.
 
 THAT'S IT
 
-If you have any questions, my email is max_fowler@brown.edu
+If you have any questions, my email is max_fowler at brown dot edu
 
 Goodluck!
 
